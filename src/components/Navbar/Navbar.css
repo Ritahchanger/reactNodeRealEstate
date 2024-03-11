@@ -1,0 +1,41 @@
+.nav{
+    background:#fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.25);
+    position:fixed;
+    right:0;
+    left:0;
+    top:0;
+    width:100%;
+    z-index:10;
+}
+.nav ul li{
+    padding:1rem 1rem;
+    cursor: pointer;
+    position: relative;
+  
+}
+.nav ul li::before{
+    position:absolute;
+    content:"";
+    width:0;
+    height:3px;
+    background:#11d6c8;
+    bottom:0;
+    transition:all 0.3s;
+    left:0;
+}
+.nav ul li:hover::before{
+    width:100%;
+}
+.nav ul li:nth-child(7)::before{
+    display:none;
+}
+.logo img{
+    width:100px;
+}
+.nav ul li:nth-child(7){
+    background:#11d6c8;
+}
+.navigation .btn{
+    background:transparent;
+}

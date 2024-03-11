@@ -1,0 +1,38 @@
+.awards{
+    background:var(--awards-bg);
+    color:#fff;
+    padding:2rem;
+    text-align:center;
+    font-size:3rem;
+}
+.awards-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    margin:0 auto;
+    margin-top:3rem;
+}
+.trophy-type{
+    font-size:1.2rem;
+}
+.numbers{
+    font-size:1.5rem;
+}
+.awards .box{
+    width:100px;
+    height:100px;
+    background:var(--awards-heading);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align: center;
+    border-top-left-radius:30px;
+    border-bottom-right-radius:30px;
+    margin-bottom:2rem;
+}
+.awards .cards{
+    display:flex;
+    justify-content:center;
+    text-align: center;
+    flex-direction:column;
+    align-items:center;
+}

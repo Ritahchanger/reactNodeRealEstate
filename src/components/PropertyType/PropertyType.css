@@ -1,0 +1,23 @@
+.grid{
+    display:grid;
+    margin-top:2rem;
+    gap:1rem;
+    grid-template-columns:repeat(5, minmax(160px, 1fr)) auto;
+}
+.grid .card {
+    padding:2rem;
+    box-shadow:0 0 5px rgba(0,0,0,0.35);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    border-radius:10px;
+    cursor:pointer;
+}
+.grid .card img{
+    width:50px;
+}
+.grid .card .card-description{
+    color:#ababab;
+    margin-top:1rem;
+}

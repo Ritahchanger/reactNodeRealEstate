@@ -1,0 +1,30 @@
+.grid-samples{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-gap:2rem;
+    padding:1rem;
+    margin-top:3rem;
+   
+}
+.grid-samples .card{
+    box-shadow:0 0 5px rgba(0,0,0,0.25);
+    border-radius:10px;
+    display:block;
+    transition:all 0.5s;
+}
+.grid-samples .card p span{
+    margin-right:1rem;
+}
+.grid-samples .card:hover{
+    transform:scale(1.1);
+}
+.grid-samples .card .card-body{
+    padding:1rem;
+}
+.img-wrapper{
+    width:100%;
+}
+.img-wrapper img{
+    display:block;
+    width:100%;
+}
