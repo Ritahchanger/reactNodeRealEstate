@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 :root{
+  --color-white:#fff;
   --awards-bg:#122947;
   --awards-heading:#27ae60;
+  --orange-colors:#ff6922;
+}
+html{
+  font-size:62.5%;
 }
 * {
   margin: 0;
@@ -35,7 +40,7 @@ img {
 .btn {
   padding: 0.6rem 1.5rem;
   border: none;
-  background: #11d6c8;
+  background:var(--awards-heading);
   color: #fff;
   font-weight: 600;
   cursor: pointer;
@@ -46,7 +51,7 @@ img {
   line-height: 1.5;
 }
 .title {
-  font-size: 2.4rem;
+  font-size:4rem;
   text-transform: capitalize;
   text-align: center;
   margin-top:3rem;
@@ -54,7 +59,7 @@ img {
 .subtitle {
   text-transform:capitalize;
   text-align: center;
-  font-size:1.3rem;
+  font-size:1.8rem;
   color:#ababab;
 }
 .flex{
@@ -67,3 +72,33 @@ img {
   font-size:1.7rem;
   color:var(--awards-heading);
 }
+.custom-btn{
+  border:none;
+  background:var(--orange-colors);
+  padding:1.4rem 3rem;
+  border-radius:30px;
+  font-weight:600;
+  color:var(--color-white);
+  cursor:pointer;
+  transition:all 0.5s;
+  border:2px solid var(--orange-colors);
+}
+.custom-btn:hover{
+  background:transparent;
+  color:var(--orange-colors)
+
+}
+
+@media(max-width:670px){
+  html{
+    font-size:56.78%;
+  }
+}
+
+@media(max-width:435px){
+  html{
+    font-size:46.78%;
+  }
+}
+
+

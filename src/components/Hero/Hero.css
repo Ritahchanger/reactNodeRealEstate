@@ -1,5 +1,5 @@
 .hero{
-    background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+    background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
     url("../../assets/images1/banner.png");
     background-position:center;
     background-size:cover;
@@ -17,7 +17,7 @@
 }
 .hero .content p{
     color:#ababab;
-    font-size:1.3rem;
+    font-size:3rem;
 }
 .search-home{
     margin-top:3rem;
@@ -50,6 +50,7 @@
 }
 .search-home .card .card-title{
     color:#ababab;
+    font-size:1.7rem;
     text-align:start;
 }
 .search-home .card:nth-child(1){
@@ -72,3 +73,15 @@
 .search-home .card:nth-child(4) .btn{
     
 }
+@media(max-width:640px){
+   .search-home{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+   }
+  }
+  @media(max-width:600px){
+    .search-home{
+     display:grid;
+     grid-template-columns:repeat(1,1fr);
+    }
+   }

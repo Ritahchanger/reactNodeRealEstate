@@ -3,7 +3,7 @@ import "./Featured.css";
 import SampleHouse from "../../assets/images2/services.jpg";
 const Featured = () => {
   return (
-    <div className="container">
+    <div className="container featured">
       <div className="grid-samples">
         <div className="card">
           <div className="img-wrapper">

@@ -1,0 +1,122 @@
+.footer {
+  margin-top: 3rem;
+  color:#fff;
+}
+.footer input{
+    width:100%;
+    height:50px;
+    background:white;
+    border:none;
+    outline:none;
+    margin:1rem 0rem;
+    padding:10px;
+    color:var(--awards-heading);
+    font-weight:600;
+    font-size:1.7rem;
+}
+.footer input::placeholder{
+    color:var(--awards-heading)
+}
+.section-a {
+  background: var(--awards-heading);
+  padding: 2rem;
+}
+
+.section-a  p{
+  font-size:3.5rem;
+}
+.section-a span{
+  font-size:2.7rem;
+}
+.section-a .custom-btn{
+  font-size:1.3rem;
+}
+.footer-logo img {
+  width: 150px;
+}
+.section-b {
+  padding: 2rem 0rem;
+  background: var(--awards-bg);
+}
+
+.section-b .row:nth-child(1) .col{
+  flex-basis:48%;
+  color:#fff;
+} 
+.section-b .row:nth-child(2){
+  flex-basis:49%;
+}
+.section-b .row:nth-child(2) .col:nth-child(1) {
+  flex-basis:30%;
+  color:#fff;
+} 
+.section-b .row:nth-child(2) .col:nth-child(2) {
+  flex-basis:30%;
+  color:#fff;
+} 
+.section-b .row:nth-child(2) .col:nth-child(3) {
+  flex-basis:30%;
+  color:#fff;
+} 
+
+
+
+.footer .section-b .custom-btn{
+    width:100%;
+    border-radius:5px;
+}
+.footer .footer-title{
+    font-size:2.4rem;
+    color:var( --orange-colors);
+}
+.footer ul li{
+    font-size:1.6rem;
+}
+.footer .description{
+    font-size:1.7rem;
+}
+
+
+@media(max-width:720px){
+  .section-b .row:nth-child(1){
+    flex-direction: column;
+  }
+  .section-b .row:nth-child(2){
+    margin-top:4rem;
+  }
+}
+@media(max-width:410px){
+  .section-a .flex{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    text-align:center;
+    align-items:center;
+  }
+  .section-a .flex .custom-btn{
+    margin-top:2rem;
+    font-size:1.7rem;
+  }
+  .section-b .row:nth-child(2){
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    justify-content:center;
+    text-align:center;
+    gap:1rem;
+    border-radius:10px;
+  }
+  .section-b .row:nth-child(2) .col{
+    background:var(--awards-heading)
+  }
+  .section-b .row:nth-child(2) .col .footer-title{
+    color:black;
+    font-weight:700;
+  }
+  
+}
+@media(max-width:340px){
+  .section-b .row:nth-child(2){
+    grid-template-columns:repeat(1,1fr);
+  }
+}
+

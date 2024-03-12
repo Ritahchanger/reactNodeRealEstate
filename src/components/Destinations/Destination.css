@@ -17,6 +17,7 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  overflow:hidden;
 }
 .destination-grid .img-wrapper img {
   width: 100%;
@@ -24,6 +25,7 @@
   height: 100%;
   border-radius: 10px;
   display:block;
+  overflow:hidden;
 }
 .overlay{
     position:absolute;
@@ -48,8 +50,25 @@
     opacity:1;
 }
 .overlay p{
-    font-size:1.3rem;
+    font-size:1.7rem;
 }
 .destination-grid .card .overlay span{
     margin:1rem;
+}
+
+@media(max-width:570px){
+  .destination-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+    grid-gap: 2rem;
+  }
+}
+@media(max-width:430px){
+  .destination-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 2rem;
+    grid-gap: 2rem;
+  }
 }

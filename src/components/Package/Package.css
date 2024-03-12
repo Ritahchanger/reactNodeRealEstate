@@ -1,0 +1,53 @@
+.grid-package{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
+    justify-content:space-between;
+}
+.grid-package .card{
+    box-shadow:0 0 5px rgba(0,0,0,0.45);
+    padding:2rem;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    flex-basis:33%;
+}
+.grid-package .amount, .grid-package .type, .grid-package .subscription{
+    text-align:center;
+}
+.grid-package .amount{
+    font-size:5rem;
+}
+.grid-package .type{
+    color:var(--orange-colors);
+    font-weight:800;
+    font-size:5rem;
+}
+.grid-package .subscription{
+    margin:1rem 0rem;
+}
+.grid-package .card .custom-btn{
+    margin:1rem 0rem;
+}
+.package .container p{
+    font-size:1.7rem;
+}
+.package .container .title{
+    font-size:4rem;
+}
+.package .container .subtitle{
+    font-size:2.3rem;
+}
+@media(max-width:556px){
+    .grid-package{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+@media(max-width:488px){
+    .grid-package{
+        grid-template-columns:repeat(1,1fr);
+    }
+}

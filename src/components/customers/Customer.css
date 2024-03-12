@@ -1,0 +1,56 @@
+.customer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+.customer-grid .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  padding: 1rem;
+}
+.customer-grid .card .customer-img {
+  margin: 2rem 0rem;
+}
+.customer-grid .card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.location i {
+  margin-right: 1rem;
+  font-size: 1.4rem;
+  color: var(--orange-colors);
+}
+.social-media i {
+  margin: 8px;
+  color: var(--orange-colors);
+  font-size: 1.8rem;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+.view-btns .btn {
+  margin: 1rem;
+}
+.customer-grid p {
+  font-size: 2rem;
+}
+@media (max-width: 710px) {
+  .customer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    margin-top: 3rem;
+  }
+}
+@media (max-width:500px) {
+  .customer-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

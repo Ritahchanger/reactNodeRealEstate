@@ -5,6 +5,9 @@ import Property from "../../components/PropertyType/Property";
 import Featured from "../../components/Featured/Featured";
 import Awards from "../../components/Awards/Awards";
 import Destination from "../../components/Destinations/Destination";
+import Customer from "../../components/customers/Customer";
+import Package from "../../components/Package/Package";
+import Footer from "../../components/Footer/Footer";
 const Home = () => {
   return (
     <div>
@@ -21,7 +24,10 @@ const Home = () => {
       />
       <Featured />
       <Awards />
-      <Destination/>
+      <Destination />
+      <Customer />
+      <Package />
+      <Footer/>
     </div>
   );
 };

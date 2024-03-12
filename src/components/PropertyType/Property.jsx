@@ -7,7 +7,7 @@ import  h4 from "../../assets/images1/hero/h4.png"
 import  h6 from "../../assets/images1/hero/h6.png"
 const Property = () => {
   return (
-    <div className='container'>
+    <div className='container property'>
         <div className="grid">
             <div className="card">
                 <img src={h1} alt="" />

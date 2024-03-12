@@ -1,41 +1,92 @@
-.nav{
-    background:#fff;
-    box-shadow: 0 0 5px rgba(0,0,0,0.25);
-    position:fixed;
-    right:0;
-    left:0;
-    top:0;
+.nav {
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.nav ul li {
+  padding: 1rem 1rem;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.6rem;
+}
+.nav ul li::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 3px;
+  background: var(--awards-heading);
+  bottom: 0;
+  transition: all 0.3s;
+  left: 0;
+}
+.nav ul li:hover::before {
+  width: 100%;
+}
+.nav ul li:nth-child(7)::before {
+  display: none;
+}
+.logo img {
+  width: 100px;
+}
+.nav ul li:nth-child(7) {
+  background: var(--awards-heading);
+}
+.navigation .btn {
+  background: transparent;
+}
+.menu-icon {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+  background: var(--awards-heading);
+  color: #fff;
+  display: none;
+  cursor:pointer;
+  transition:all 0.5s;;
+}
+.menu-icon:hover{
+  background:var(--orange-colors);
+}
+.menu-icon i {
+  font-size: 2rem;
+  cursor:pointer;
+}
+
+@media (max-width: 604px) {
+  .nav {
+    border-bottom:1px solid var(--awards-heading);
+    background:var(--awards-bg);
+  }
+  .menu-icon {
+    display: flex;
+  }
+  .navigation {
+    position: absolute;
+    background: #fff;
+    top: 100%;
     width:100%;
-    z-index:10;
-}
-.nav ul li{
-    padding:1rem 1rem;
-    cursor: pointer;
-    position: relative;
-  
-}
-.nav ul li::before{
-    position:absolute;
-    content:"";
-    width:0;
-    height:3px;
-    background:#11d6c8;
-    bottom:0;
-    transition:all 0.3s;
+    left:-100%;
+    padding-bottom:1.4rem;
+    transition:all 0.5s;
+    border-bottom:4px solid var(--awards-heading);
+  }
+  .navigation.active{
     left:0;
-}
-.nav ul li:hover::before{
-    width:100%;
-}
-.nav ul li:nth-child(7)::before{
-    display:none;
-}
-.logo img{
-    width:100px;
-}
-.nav ul li:nth-child(7){
-    background:#11d6c8;
-}
-.navigation .btn{
-    background:transparent;
+  }
+  .navigation .flex-apart {
+    flex-direction: column;
+  }
+  .nav ul li:nth-child(7) {
+
+    margin-top:3rem;
+
+  }
 }

@@ -15,9 +15,39 @@
     cursor:pointer;
 }
 .grid .card img{
-    width:50px;
+    width:80px;
 }
 .grid .card .card-description{
     color:#ababab;
     margin-top:1rem;
+    font-size:1.6rem;
 }
+.property .card .card-title{
+    font-size:1.8rem;
+}
+
+@media(max-width:888px){
+    .grid{
+        display:grid;
+        margin-top:2rem;
+        gap:1rem;
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+@media(max-width:520px){
+    .grid{
+        display:grid;
+        margin-top:2rem;
+        gap:1rem;
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+@media(max-width:308px){
+    .grid{
+        display:grid;
+        margin-top:2rem;
+        gap:1rem;
+        grid-template-columns:repeat(1,1fr);
+    }
+}
+

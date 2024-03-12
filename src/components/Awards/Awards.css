@@ -12,10 +12,11 @@
     margin-top:3rem;
 }
 .trophy-type{
-    font-size:1.2rem;
+    font-size:2.3rem;
 }
 .numbers{
-    font-size:1.5rem;
+    font-size:4.5rem;
+    font-weight:700;
 }
 .awards .box{
     width:100px;
@@ -28,6 +29,11 @@
     border-top-left-radius:30px;
     border-bottom-right-radius:30px;
     margin-bottom:2rem;
+    transition:all 0.5s;
+    cursor: pointer;
+}
+.awards .box:hover{
+    background:var(--orange-colors);
 }
 .awards .cards{
     display:flex;
@@ -35,4 +41,11 @@
     text-align: center;
     flex-direction:column;
     align-items:center;
+}
+
+@media(max-width:555px){
+    .awards-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+    }
 }
