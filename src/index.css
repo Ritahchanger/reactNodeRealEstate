@@ -14,7 +14,7 @@ html{
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
 }
-.a {
+a {
   text-decoration: none;
 }
 ul {

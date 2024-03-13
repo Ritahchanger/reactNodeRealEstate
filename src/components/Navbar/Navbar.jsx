@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import Logo from "../../assets/images1/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [showNavbar, setShowNavBar] = useState(false);
@@ -17,12 +18,12 @@ const Navbar = () => {
           </div>
           <div className={`navigation ${showNavbar ? 'active' : null }`}>
             <ul className="flex-apart">
-              <li>Home</li>
-              <li>About</li>
-              <li>Services</li>
-              <li>Blog</li>
-              <li>Pricing</li>
-              <li>Contact</li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/pricing">Pricing</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
               <li>
                 <button className="btn">SIGN IN</button>
               </li>
