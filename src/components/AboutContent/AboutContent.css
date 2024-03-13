@@ -1,0 +1,39 @@
+.about-content{
+    margin-top:4rem;
+}
+.about-content .row .col{
+    flex-basis:48%;
+}
+.about-content .row .col:nth-child(1){
+    box-shadow:0 0 5px rgba(0,0,0,0.45);
+    padding:2rem;
+    border-radius:10px;
+}
+.about-content .row .col:nth-child(2) img{
+    border-radius:10px;
+}
+.header{
+    color:var(--orange-colors);
+    font-size:6rem;
+}
+.about-content .card-description{
+    font-size:1.7rem;
+}
+.about-content .custom-btn{
+    border-radius:4px;
+    margin-top:3rem;
+}
+.about-content .header-description{
+    font-size:2rem;
+    color:#ccc;
+    font-weight:600;
+}
+
+@media(max-width:620px){
+    .about-content .flex{
+        flex-direction: column;
+    }
+    .about-content .flex .col{
+        margin-top:2rem;
+    }
+}

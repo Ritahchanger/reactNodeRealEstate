@@ -11,6 +11,7 @@ const Banner = () => {
           <p className="page-expectation">
             About Us - Who We Are?
           </p>
+          <button className="custom-btn">VISIT DEVELOPER</button>
         </div>
         </div>
     </div>

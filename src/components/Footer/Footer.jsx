@@ -49,25 +49,25 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="col">
-                <p className="footer-title">LAYOUTS</p>
+                <p className="footer-title">ALL SECTIONS</p>
                 <ul className="footer-ul">
-                  <li>Home Page</li>
-                  <li>About Page</li>
-                  <li>Service Page</li>
-                  <li>Property Page</li>
-                  <li>Contact Page</li>
-                  <li>Single Blog</li>
+                  <li>Headers</li>
+                  <li>Features</li>
+                  <li>Attractive</li>
+                  <li>Testimonials</li>
+                  <li>Videos</li>
+                  <li>Footers</li>
                 </ul>
               </div>
               <div className="col">
-                <p className="footer-title">LAYOUTS</p>
+                <p className="footer-title">COMPANY</p>
                 <ul className="footer-ul">
-                  <li>Home Page</li>
                   <li>About Page</li>
-                  <li>Service Page</li>
-                  <li>Property Page</li>
-                  <li>Contact Page</li>
-                  <li>Single Blog</li>
+                  <li>Blog</li>
+                  <li>Pricing</li>
+                  <li>Affiliate</li>
+                  <li>Login</li>
+                  <li>Changelog</li>
                 </ul>
               </div>
             </div>
