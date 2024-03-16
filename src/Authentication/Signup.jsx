@@ -10,7 +10,7 @@ const Signup = () => {
     idNo: "",
     phoneNo: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
 
   const [errors, setErrors] = useState({
@@ -20,7 +20,7 @@ const Signup = () => {
     idNo: "",
     phoneNo: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
 
   const handleChange = (event) => {
@@ -30,7 +30,7 @@ const Signup = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     const newErrors = {};
     if (!formData.sirname) {
       newErrors.sirname = "Please enter your Sirname.";
@@ -40,15 +40,24 @@ const Signup = () => {
     }
     if (!formData.email) {
       newErrors.email = "Please enter your email.";
+    } else if (!isValidEmail(formData.email)) {
+      newErrors.email = "Please enter a valid email address.";
     }
     if (!formData.idNo) {
       newErrors.idNo = "Please enter your ID number.";
+    } else if (formData.idNo.length < 8) {
+      newErrors.idNo = "ID number must be at least 8 characters long.";
     }
     if (!formData.phoneNo) {
       newErrors.phoneNo = "Please enter your phone number.";
     }
+    else if(formData.phoneNo.length<10) {
+      newErrors.phoneNo = "Phone number should be 10";
+    }
     if (!formData.password) {
       newErrors.password = "Please enter your password.";
+    } else if (formData.password.length < 8) {
+      newErrors.password = "Password must be at least 8 characters long.";
     }
     if (!formData.confirmPassword) {
       newErrors.confirmPassword = "Please confirm your password.";
@@ -60,13 +69,22 @@ const Signup = () => {
     setErrors(newErrors);
   };
 
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   return (
     <div className="signup">
       <div className="container">
         <p className="form-title">
           <a href="#">SIGNUP</a>
         </p>
-        <form onSubmit={handleSubmit} className="authentication-form">
+        <form
+          onSubmit={handleSubmit}
+          className="authentication-form"
+          noValidate
+        >
           <div className="row">
             <div className="input-group">
               <p>Sirname</p>
@@ -76,7 +94,11 @@ const Signup = () => {
                 value={formData.sirname}
                 onChange={handleChange}
               />
-              {errors.sirname && <p className="error"style={{color:"red"}}>{errors.sirname}</p>}
+              {errors.sirname && (
+                <p className="error" style={{ color: "red" }}>
+                  {errors.sirname}
+                </p>
+              )}
             </div>
             <div className="input-group">
               <p>Lastname</p>
@@ -86,7 +108,11 @@ const Signup = () => {
                 value={formData.lastname}
                 onChange={handleChange}
               />
-              {errors.lastname && <p className="error"style={{color:"red"}}>{errors.lastname}</p>}
+              {errors.lastname && (
+                <p className="error" style={{ color: "red" }}>
+                  {errors.lastname}
+                </p>
+              )}
             </div>
           </div>
           <div className="input-group">
@@ -97,7 +123,11 @@ const Signup = () => {
               value={formData.email}
               onChange={handleChange}
             />
-            {errors.email && <p className="error"style={{color:"red"}}>{errors.email}</p>}
+            {errors.email && (
+              <p className="error" style={{ color: "red" }}>
+                {errors.email}
+              </p>
+            )}
           </div>
           <div className="input-group">
             <p>Id no</p>
@@ -107,7 +137,11 @@ const Signup = () => {
               value={formData.idNo}
               onChange={handleChange}
             />
-            {errors.idNo && <p className="error"style={{color:"red"}}>{errors.idNo}</p>}
+            {errors.idNo && (
+              <p className="error" style={{ color: "red" }}>
+                {errors.idNo}
+              </p>
+            )}
           </div>
           <div className="input-group">
             <p>Phone No</p>
@@ -117,7 +151,11 @@ const Signup = () => {
               value={formData.phoneNo}
               onChange={handleChange}
             />
-            {errors.phoneNo && <p className="error"style={{color:"red"}}>{errors.phoneNo}</p>}
+            {errors.phoneNo && (
+              <p className="error" style={{ color: "red" }}>
+                {errors.phoneNo}
+              </p>
+            )}
           </div>
           <div className="row">
             <div className="input-group">
@@ -128,7 +166,11 @@ const Signup = () => {
                 value={formData.password}
                 onChange={handleChange}
               />
-              {errors.password && <p className="error"style={{color:"red"}}>{errors.password}</p>}
+              {errors.password && (
+                <p className="error" style={{ color: "red" }}>
+                  {errors.password}
+                </p>
+              )}
             </div>
             <div className="input-group">
               <p>Confirm password</p>
@@ -139,7 +181,9 @@ const Signup = () => {
                 onChange={handleChange}
               />
               {errors.confirmPassword && (
-                <p className="error"style={{color:"red"}}>{errors.confirmPassword}</p>
+                <p className="error" style={{ color: "red" }}>
+                  {errors.confirmPassword}
+                </p>
               )}
             </div>
           </div>
