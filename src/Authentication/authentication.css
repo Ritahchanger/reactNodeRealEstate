@@ -1,0 +1,65 @@
+.authentication-form{
+    max-width:800px;
+    margin:0 auto;
+    box-shadow:0 0 5px rgba(0,0,0,0.25);
+    padding:2rem;
+    margin-top:2rem;
+    border-radius:2px;
+}
+.error{
+    color:red;
+}
+.authentication-form input{
+    width:100%;
+    height:30px;
+    font-size:1.4rem;
+    outline:none;
+    border:none;
+    border-bottom:1px solid #Ccc;
+}
+.authentication-form .input-group{
+    padding:1rem 0rem;
+}
+.authentication-form .input-group p{
+    font-size:1.7rem;
+    color:#ababab;
+}
+.form-title a{
+    color:var(--orange-colors);
+    font-weight:700;
+}
+.form-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-top:4rem;
+}
+.authentication-form input[type=submit]{
+    border-bottom:none;
+    height:40px;
+    color:#fff;
+    font-weight:600;
+    background:var(--orange-colors);
+    border-radius:4px;
+    cursor: pointer;
+}
+.authentication-form input[type=submit]:hover{
+    background:rgb(10, 110, 1);
+}
+.authentication-form .row{
+    display:flex;
+    justify-content:space-between;
+}
+.authentication-form .row .input-group{
+    flex-basis:49%;
+}
+.authentication-linker{
+    text-align:center;
+    font-size:1.6rem;
+}
+
+
+@media(max-width:570px){
+    .authentication-form .row{
+        flex-direction:column;
+    }
+}

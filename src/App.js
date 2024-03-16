@@ -5,6 +5,8 @@ import Services from "./assets/pages/Services";
 import Pricing from "./assets/pages/Pricing";
 import Home from "./assets/pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Signup from "./Authentication/Signup";
+import Login from "./Authentication/Login"
 const App = () => {
   return (
     <div>
@@ -16,6 +18,8 @@ const App = () => {
           <Route exact path="/services" element={<Services />} />
           <Route exact path="/pricing" element={<Pricing />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/signup" element={<Signup/>} />
+          <Route exact path="/login" element={<Login/>} />
         </Routes>
       </BrowserRouter>
     </div>

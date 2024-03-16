@@ -1,9 +1,8 @@
 import React from "react";
 import Title from "../Title/Title";
 import FirstImage from "../../assets/images1/customer/team-1.jpg";
-import "./Customer.css"
+import "./Customer.css";
 import { customerData } from "../../Data/Customer";
-
 const Customer = () => {
   return (
     <div className="customers">
@@ -31,8 +30,12 @@ const Customer = () => {
                   <i class="fa-brands fa-twitter"></i>
                 </p>
                 <div className="view-btns">
-                  <button class="btn"><i class="fa-solid fa-message"></i></button>
-                  <button class="btn"><i class="fa-solid fa-phone"></i></button>
+                  <button class="btn">
+                    <i class="fa-solid fa-message"></i>
+                  </button>
+                  <button class="btn">
+                    <i class="fa-solid fa-phone"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -42,5 +45,4 @@ const Customer = () => {
     </div>
   );
 };
-
 export default Customer;

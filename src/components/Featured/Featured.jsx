@@ -17,7 +17,12 @@ const Featured = () => {
               </p>
             </div>
             <p>Red Carpet Real Estate</p>
-            <p><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>Zirak Road, Canada</p>
+            <p>
+              <span>
+                <i class="fa-sharp fa-solid fa-location-dot"></i>
+              </span>
+              Zirak Road, Canada
+            </p>
             <hr />
             <div className="row flex">
               <div className="col">
@@ -41,7 +46,12 @@ const Featured = () => {
               </p>
             </div>
             <p>Red Carpet Real Estate</p>
-            <p><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>Zirak Road, Canada</p>
+            <p>
+              <span>
+                <i class="fa-sharp fa-solid fa-location-dot"></i>
+              </span>
+              Zirak Road, Canada
+            </p>
             <hr />
             <div className="row flex">
               <div className="col">
@@ -65,7 +75,12 @@ const Featured = () => {
               </p>
             </div>
             <p>Red Carpet Real Estate</p>
-            <p><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>Zirak Road, Canada</p>
+            <p>
+              <span>
+                <i class="fa-sharp fa-solid fa-location-dot"></i>
+              </span>
+              Zirak Road, Canada
+            </p>
             <hr />
             <div className="row flex">
               <div className="col">
@@ -89,7 +104,12 @@ const Featured = () => {
               </p>
             </div>
             <p>Red Carpet Real Estate</p>
-            <p><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>Zirak Road, Canada</p>
+            <p>
+              <span>
+                <i class="fa-sharp fa-solid fa-location-dot"></i>
+              </span>
+              Zirak Road, Canada
+            </p>
             <hr />
             <div className="row flex">
               <div className="col">
@@ -113,7 +133,12 @@ const Featured = () => {
               </p>
             </div>
             <p>Red Carpet Real Estate</p>
-            <p><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>Zirak Road, Canada</p>
+            <p>
+              <span>
+                <i class="fa-sharp fa-solid fa-location-dot"></i>
+              </span>
+              Zirak Road, Canada
+            </p>
             <hr />
             <div className="row flex">
               <div className="col">
@@ -137,7 +162,12 @@ const Featured = () => {
               </p>
             </div>
             <p>Red Carpet Real Estate</p>
-            <p><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>Zirak Road, Canada</p>
+            <p>
+              <span>
+                <i class="fa-sharp fa-solid fa-location-dot"></i>
+              </span>
+              Zirak Road, Canada
+            </p>
             <hr />
             <div className="row flex">
               <div className="col">
@@ -149,8 +179,6 @@ const Featured = () => {
             </div>
           </div>
         </div>
-        
-        
       </div>
     </div>
   );
