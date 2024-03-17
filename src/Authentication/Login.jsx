@@ -53,7 +53,7 @@ const Login = () => {
           ? setPasswordFound(true)
           : setPasswordFound(false);
 
-        navigate('/home');
+        navigate('/');
       } catch (error) {
         console.log("Error occurred in fetching the data from the backend");
       }
