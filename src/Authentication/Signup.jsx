@@ -1,57 +1,54 @@
 import React, { useState } from "react";
 import "./authentication.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Signup = () => {
+  const [emailFound, setEmailFound] = useState(false);
   const [formData, setFormData] = useState({
-    sirname: "",
-    lastname: "",
+    sirName: "",
+    lastName: "",
     email: "",
-    idNo: "",
     phoneNo: "",
     password: "",
     confirmPassword: "",
   });
 
   const [errors, setErrors] = useState({
-    sirname: "",
-    lastname: "",
+    sirName: "",
+    lastName: "",
     email: "",
-    idNo: "",
     phoneNo: "",
     password: "",
     confirmPassword: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (event) => {
     const { name, value } = event.target;
+    setEmailFound(false);
     setFormData({ ...formData, [name]: value });
     setErrors({ ...errors, [name]: "" });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const newErrors = {};
-    if (!formData.sirname) {
-      newErrors.sirname = "Please enter your Sirname.";
+    if (!formData.sirName) {
+      newErrors.sirName = "Please enter your Sirname.";
     }
-    if (!formData.lastname) {
-      newErrors.lastname = "Please enter your Lastname.";
+    if (!formData.lastName) {
+      newErrors.lastName = "Please enter your Lastname.";
     }
     if (!formData.email) {
       newErrors.email = "Please enter your email.";
     } else if (!isValidEmail(formData.email)) {
       newErrors.email = "Please enter a valid email address.";
     }
-    if (!formData.idNo) {
-      newErrors.idNo = "Please enter your ID number.";
-    } else if (formData.idNo.length < 8) {
-      newErrors.idNo = "ID number must be at least 8 characters long.";
-    }
     if (!formData.phoneNo) {
       newErrors.phoneNo = "Please enter your phone number.";
-    }
-    else if(formData.phoneNo.length<10) {
+    } else if (formData.phoneNo.length < 10) {
       newErrors.phoneNo = "Phone number should be 10";
     }
     if (!formData.password) {
@@ -65,10 +62,36 @@ const Signup = () => {
     if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = "Passwords do not match.";
     }
-
     setErrors(newErrors);
-  };
 
+    if (Object.keys(newErrors).length === 0) {
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/api/users/signup/",
+          {
+            sirName: formData.sirName,
+            lastName: formData.lastName,
+            email: formData.email,
+            phoneNo: formData.phoneNo,
+            password: formData.password,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        const backendData = response.data;
+        console.log(backendData);
+
+        backendData.emailFound ? setEmailFound(true) : setEmailFound(false);
+
+        navigate("/login")
+      } catch (error) {
+        console.log("Error occured in fetching the data from the backend");
+      }
+    }
+  };
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -90,13 +113,13 @@ const Signup = () => {
               <p>Sirname</p>
               <input
                 type="text"
-                name="sirname"
-                value={formData.sirname}
+                name="sirName"
+                value={formData.sirName}
                 onChange={handleChange}
               />
-              {errors.sirname && (
+              {errors.sirName && (
                 <p className="error" style={{ color: "red" }}>
-                  {errors.sirname}
+                  {errors.sirName}
                 </p>
               )}
             </div>
@@ -104,13 +127,13 @@ const Signup = () => {
               <p>Lastname</p>
               <input
                 type="text"
-                name="lastname"
-                value={formData.lastname}
+                name="lastName"
+                value={formData.lastName}
                 onChange={handleChange}
               />
-              {errors.lastname && (
+              {errors.lastName && (
                 <p className="error" style={{ color: "red" }}>
-                  {errors.lastname}
+                  {errors.lastName}
                 </p>
               )}
             </div>
@@ -128,18 +151,10 @@ const Signup = () => {
                 {errors.email}
               </p>
             )}
-          </div>
-          <div className="input-group">
-            <p>Id no</p>
-            <input
-              type="text"
-              name="idNo"
-              value={formData.idNo}
-              onChange={handleChange}
-            />
-            {errors.idNo && (
+
+            {emailFound && (
               <p className="error" style={{ color: "red" }}>
-                {errors.idNo}
+                We already have this user!
               </p>
             )}
           </div>

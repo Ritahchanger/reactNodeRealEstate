@@ -18,7 +18,7 @@ const Navbar = () => {
           </div>
           <div className={`navigation ${showNavbar ? 'active' : null }`}>
             <ul className="flex-apart">
-              <li><Link to="/">Home</Link></li>
+              <li><Link to="/home">Home</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/services">Services</Link></li>
               <li><Link to="/blog">Blog</Link></li>

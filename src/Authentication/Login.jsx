@@ -1,23 +1,30 @@
 import React, { useState } from "react";
 import "./authentication.css";
-import { Link } from "react-router-dom";
-const Signup = () => {
+import axios from "axios";
+import { Link,useNavigate } from "react-router-dom";
+const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   const [errors, setErrors] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
+  const navigate = useNavigate()
+
+  const [emailNotFound, setEmailFound] = useState(false);
+  const [passwordNotFound, setPasswordFound] = useState(false);
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
     setErrors({ ...errors, [name]: "" });
+    setEmailFound(false);
+    setPasswordFound(false);
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const newErrors = {};
     if (!formData.email) {
@@ -29,12 +36,32 @@ const Signup = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      alert("Form submitted successfully!");
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/api/users/login/",
+          formData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        const backendData = response.data;
+
+        !backendData.emailFound ? setEmailFound(true) : setEmailFound(false);
+        !backendData.passwordFound
+          ? setPasswordFound(true)
+          : setPasswordFound(false);
+
+        navigate('/home');
+      } catch (error) {
+        console.log("Error occurred in fetching the data from the backend");
+      }
     }
   };
 
   return (
-    <div className="signup">
+    <div className="login-page" id="login-page">
       <div className="container">
         <p className="form-title">
           <a href="#">LOGIN</a>
@@ -49,7 +76,18 @@ const Signup = () => {
               value={formData.email}
               onChange={handleChange}
             />
-            {errors.email && <p className="error" style={{color:"red"}}>{errors.email}</p>}
+            {errors.email && (
+              <p className="error" style={{ color: "red" }}>
+                {errors.email}
+              </p>
+            )}
+            {emailNotFound ? (
+              <p className="error" style={{ color: "red" }}>
+                User not found
+              </p>
+            ) : (
+              ""
+            )}
           </div>
           <div className="input-group">
             <p>Password</p>
@@ -60,7 +98,18 @@ const Signup = () => {
               value={formData.password}
               onChange={handleChange}
             />
-              {errors.email && <p className="error" style={{color:"red"}}>{errors.password}</p>}
+            {errors.password && (
+              <p className="error" style={{ color: "red" }}>
+                {errors.password}
+              </p>
+            )}
+            {passwordNotFound ? (
+              <p className="error" style={{ color: "red" }}>
+                Wrong password
+              </p>
+            ) : (
+              ""
+            )}
           </div>
 
           <div className="input-group">
@@ -75,4 +124,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
