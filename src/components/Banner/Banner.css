@@ -37,7 +37,7 @@
     font-size:4rem;
 }
 .banner .banner-overlay .page-name-text{
-    font-size:7rem;
+    font-size:5rem;
 }
 .banner .banner-overlay .custom-btn{
     margin-top:2rem;
@@ -47,4 +47,15 @@
     .banner .banner-overlay .container .page-name-text{
         margin-top:20rem;
     }
+}
+
+
+
+@media(max-width:400px){
+  .banner .banner-overlay .page-name-text{
+    font-size:5rem;
+  }
+  .banner{
+    height:80vh;
+  }
 }

@@ -7,6 +7,7 @@ import PropertyManagement from "../../components/services/propertyManagement/Pro
 import Search from "../../components/services/search/Search";
 
 import { useState } from "react";
+import Offering from "../../components/Offering/Offering";
 
 const Services = () => {
   const [showBanner, setShowBanner] = useState(true);
@@ -14,11 +15,16 @@ const Services = () => {
     <div>
       <Navbar />
 
-      <Banner BannerImage={serviceImage} bannerTitle="SERVICES" pageExpectation="Based on user preferences..." />
+      <Banner
+        BannerImage={serviceImage}
+        bannerTitle="SERVICES"
+        pageExpectation="Based on user preferences..."
+      />
 
       <Search />
       <Collections />
-      <PropertyManagement />
+      <Offering/>
+      <PropertyManagement /> 
       <Footer />
     </div>
   );

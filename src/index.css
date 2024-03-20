@@ -13,6 +13,7 @@ html{
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
+  /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 a {
   text-decoration: none;
@@ -87,6 +88,17 @@ img {
   background:transparent;
   color:var(--orange-colors)
 
+}
+.check-out-btn{
+  background:var(--orange-colors);
+  color:#fff;
+  padding:1rem;
+  transition:all 0.5s;
+  font-weight:600;
+}
+.check-out-btn:hover{
+  cursor: pointer;
+  background:var(--awards-heading);
 }
 
 @media(max-width:670px){

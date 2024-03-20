@@ -1,62 +1,56 @@
-.search-bar{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-top:4rem;
-    position:relative;
-    border:1px solid #ccc;
+.search-wrapper {
+  width: 100%;
 }
-.search-bar input{
-    border:none;
-    height:40px;
-    margin-left:1rem;
-    outline:none;
+.search-wrapper {
+  width: 100%;
+  display: flex;
+  margin-top: 3rem;
+  position: relative;
 }
-.search-bar input[type=text]{
-    flex-basis:80%;
+.search-wrapper input {
+  height: 40px;
+  border: none;
 }
-.search-bar input[type=submit]{
-    flex-basis:17%;
-    background:var(--orange-colors);
-    color:#fff;
-    font-weight:600;
+.search-wrapper .search {
+  flex-basis: 80%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-right: none;
+  outline: none;
+  font-size: 1.4rem;
 }
-.filtered-container{
-    position:absolute;
-    top:120%;
-    background:#fff;
-    width:100%;
-    left:0;
-    right:0;
-    padding:2rem;
-    z-index:9;
-    box-shadow:0 0 5px rgba(0,0,0,0.45);
-    border-bottom-right-radius:8px;
-    border-bottom-left-radius:8px;
-    max-height:300px;
-    overflow:scroll;
-    opacity:-2;
+.submit-button {
+  flex-basis: 20%;
+  color: #fff;
+  cursor: pointer;
+  transition: All 0.5ms;
+  font-weight: 600px;
+  background: var(--orange-colors);
 }
-.filtered-container.active{
-    opacity:1;
+.submit-button:hover {
+  transform: scale(1.1);
 }
-.filtered-container::-webkit-scrollbar{
-    width:4px;
+.filter-container {
+  position: absolute;
+  top: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  background: var(--color-white);
+  z-index: 9;
+  max-height: 300px;
+  display: none;
+  overflow-y: scroll;
 }
-.filtered-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
+.filter-container.active {
+  display: initial;
 }
-.filtered-container::-webkit-scrollbar-thumb {
-    background: #888; 
+.filter-container p {
+  font-size: 1.5rem;
 }
 
-.filtered-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
+@media(max-width:400px){
+    .search_container{
+        margin-top:8rem;
+    }
 }
-.filtered-container li{
-    padding:1rem;
-}
-.filtered-container li p{
-    font-size:2rem;
-}
+

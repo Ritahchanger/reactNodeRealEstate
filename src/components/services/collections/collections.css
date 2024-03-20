@@ -1,45 +1,28 @@
-.slick-slide > div{
-    margin:0 10px;
-}
-.card-service{
-    position: relative;
-}
-.collections-grid{
-    margin-top:5rem;
-}
 .collections{
-    margin-top:5rem;
+    margin-top:7rem;
 }
-.card-service .img-wrapper{
-   width:100%;
-   height:100%;
+.collections .grid{
+    grid-template-columns: repeat(4,1fr);
 }
-.card-service img{
-    border-radius:10px;
-    width:100%;
-    height:100%;
+.collections .grid .card-collection{
+    box-shadow:0 0 5px rgba(0,0,0,0.25);
 }
-.card-description{
-    position:absolute;
-    left:0;
-    height:0;
-    top:0;
-    width:100%;
-    color:#fff;
-    height:100%;
-    background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75));
-    border-radius:10px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    flex-direction: column;
+.card-body{
+    padding:1rem;
 }
-.card-description .price{
-    font-size:4rem;
-    font-weight:700;
-    color:var(--orange-colors)
+.card-body p{
+    font-size:1.6rem;
+    
 }
-.card-service .card-description p{
-    font-size:2rem;
+
+
+@media(max-width:650px){
+    .collections .grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media(max-width:430px){
+    .collections .grid{
+        grid-template-columns: repeat(2,1fr);
+    }
 }

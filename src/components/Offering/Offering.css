@@ -1,0 +1,10 @@
+.offering{
+    background:var(--awards-heading);
+    margin-top:3rem;
+    padding-top:3rem;
+    padding-bottom:3rem;
+}
+.offering p{
+    color:var(--color-white);
+    font-size:1.6rem;
+}
